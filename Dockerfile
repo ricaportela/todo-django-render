@@ -13,7 +13,7 @@ ENV LANGUAGE pt_BR.UTF-8
 ENV LOC_ALL pt_BR.UTF-8
 RUN locale-gen pt_BR.UTF-8
 
-RUN python3 -m venv /venv
+RUN python -m venv /venv
 
 RUN . /venv/bin/activate
 

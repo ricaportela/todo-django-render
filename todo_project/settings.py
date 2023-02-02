@@ -22,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = ''
-SECRET_KEY = os.environ.get('SECRET_KEY', default='SECRET_KEY')
+SECRET_KEY = 'q-*ie8j6*&5(5%#$b*=y_xke@p*pe^^b!c*93*1!6@larb@pu_'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', default='DEBUG')
+DEBUG = True
 
-ALLOWED_HOSTS = ['*', '0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:
