@@ -1,7 +1,7 @@
-databases:
-  - name: todo_project
-    databaseName: todo_project
-    user: todo_project
+# databases:
+#   - name: todo_project
+#     databaseName: todo_project
+#     user: todo_project
 
 services:
   - type: web
