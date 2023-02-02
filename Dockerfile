@@ -8,18 +8,17 @@ RUN apt-get update && \
     apt install -y libjpeg-dev zlib1g-dev python3-dev build-essential
 
 ENV PYTHONUNBUFFERED 1
-# Set locale
 ENV LANG pt_BR.UTF-8
 ENV LANGUAGE pt_BR.UTF-8
 ENV LOC_ALL pt_BR.UTF-8
 RUN locale-gen pt_BR.UTF-8
 
-# Create the virtual environment
-RUN python -m venv /venv
+RUN python3 -m venv /venv
 
-# Activate the virtual environment
 ENV VIRTUAL_ENV /venv
 ENV PATH /venv/bin:$PATH
+
+RUN . /venv/bin/activate
 
 ADD . /app
 WORKDIR /app
@@ -32,3 +31,4 @@ RUN pip install pip --upgrade && \
 RUN python manage.py collectstatic --no-input
 
 EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "8000"]
