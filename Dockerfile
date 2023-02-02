@@ -15,9 +15,6 @@ RUN locale-gen pt_BR.UTF-8
 
 RUN python3 -m venv /venv
 
-ENV VIRTUAL_ENV /venv
-ENV PATH /venv/bin:$PATH
-
 RUN . /venv/bin/activate
 
 ADD . /app
