@@ -1,0 +1,20 @@
+databases:
+  - name: todo_project
+    databaseName: todo_project
+    user: todo_project
+
+services:
+  - type: web
+    name: todo_project
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn todo_project.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: todo_project
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
