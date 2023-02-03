@@ -25,7 +25,7 @@ COPY . /app/
 RUN pip install pip --upgrade && \
     pip install -r requirements.txt
 
+RUN ./build.sh
 RUN python manage.py collectstatic --no-input
 
 EXPOSE 8000
-CMD ["python", "manage.py", "runserver", "8000"]
